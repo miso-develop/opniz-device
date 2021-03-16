@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"name": "opniz-device",
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"new": "cpp",
+			"*.tcc": "cpp",
+			"cmath": "cpp",
+			"array": "cpp",
+			"deque": "cpp",
+			"string": "cpp",
+			"unordered_map": "cpp",
+			"unordered_set": "cpp",
+			"vector": "cpp",
+			"initializer_list": "cpp",
+			"esp32-hal.h": "c",
+			"functional": "cpp"
+		},
+		"cSpell.words": [
+			"CRGB",
+			"Ledc",
+			"MTBF",
+			"Opniz",
+			"Pico",
+			"drawpix",
+			"errno",
+			"fastled",
+			"jdlog",
+			"ledc",
+			"opniz"
+		]
+	},
+	"recommendations": [
+		"platformio.platformio-ide"
+	]
+}

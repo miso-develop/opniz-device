@@ -1,0 +1,23 @@
+{
+  "name": "Opniz",
+  "version": "0.0.1",
+  "description": "",
+  "keywords": "Opniz,ESP32,M5Stack",
+  "license": "MIT",
+  "homepage": "https://github.com/miso-develop/opniz",
+  "repository": {
+    "type" : "git",
+    "url": "https://github.com/miso-develop/opniz-device.git"
+  },
+  "authors": {
+    "name": "Miso Tanaka",
+    "email": "miso.develop@gmail.com"
+  },
+  "framework": "arduino",
+  "platforms": "espressif32",
+  "dependencies": {
+    "m5stack/M5Atom": "^0.0.1",
+    "fastled/FastLED": "^3.4.0",
+    "bblanchon/ArduinoJson": "^6.17.3"
+  }
+}
