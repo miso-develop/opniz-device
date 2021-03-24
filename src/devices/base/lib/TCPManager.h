@@ -14,7 +14,7 @@ private:
     WiFiClient _socket;
     WiFiClient _client;
     
-    uint16_t _timeout = 30 * 1000;
+    uint16_t _timeout = 60 * 1000;
     uint32_t _startTime;
     std::function<void()> _timeoutCallback = [this]() { connect(); };
     

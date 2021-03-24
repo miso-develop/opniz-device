@@ -10,7 +10,7 @@ WiFiConnector wifi(ssid, password);
 // opniz
 const char* address = "192.168.0.1"; // Node.js SDKを実行する端末のIPアドレスを指定
 const uint16_t port = 3000;        // 任意のポート番号を指定（opniz Node.js SDKでの指定と合わせる）
-Opniz::M5AtomLite* opniz = new Opniz::M5AtomLite(address, port); // opnizインスタンス生成
+Opniz::M5Atom* opniz = new Opniz::M5Atom(address, port); // opnizインスタンス生成
 
 
 

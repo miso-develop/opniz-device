@@ -3,14 +3,14 @@
 `❗ このプロジェクトは現在アルファ版です。`
 
 opnizとはM5StackといったESP32デバイスをNode.jsからobnizライクに制御するための、**Node.js SDK**および**Arduinoライブラリ**です。  
-ざっくり言うとサーバーを介さない、オープンソースな、obnizっぽい実装ができるなにかです。  
+ざっくりいうとサーバーを介さない、オープンソースな、obnizっぽい実装ができるなにかです。  
 
-仕組みとしてはESP32デバイスおよびNode.js SDKにて**TCPサーバー/クライアントを実行**し、相互にTCP経由で**JSONメッセージ**をやりとりしています。  
+しくみとしてはESP32デバイスおよびNode.js SDKにて**TCPサーバー/クライアントを実行**し、相互にTCP経由で**JSONメッセージ**をやりとりしています。  
 
 ![overview](./extras/images/overview.png)
 
-現在Node.js SDK、Arduinoライブラリともに**ESP32-PICO**および**M5ATOM Lite**クラスを実装しています。  
-M5ATOM Liteクラスで**M5Stack、M5StickC、M5ATOM Matrixでの動作も確認しています。**  
+現在Node.js SDK、Arduinoライブラリともに**ESP32**および**M5ATOM**クラスを実装しています。  
+M5ATOMクラスで**M5Stack、M5StickC、M5ATOM Lite、M5ATOM Matrixでの動作を確認しています。**  
 
 新たなデバイスクラスを簡単に拡張できる設計となっています。  
 おってリファレンスも作成予定ですが、クラス拡張ハンズオンも作成予定です。  
@@ -54,14 +54,14 @@ Arduinoのメニューより「スケッチ」→「ライブラリをインク�
 
 ## 使い方
 
-以下のコードはM5ATOM Liteクラスを使用した最小限のコードです。  
+以下のコードはM5ATOMクラスを使用した最小限のコードです。  
 Arduino IDEメニューの「スケッチ例」→「opniz」→「Basic」にあるコードと同等です。  
-（M5Stack、M5StickC、M5ATOM Matrixも以下のコードで動作を確認しています）  
+（M5Stack、M5StickCも以下のコードで動作を確認しています）  
 
-opnizインスタンスの生成、WiFi接続、Node.js SDK実行端末への接続、そして`loop`関数内でNode.js SDK実行端末からのTCPメッセージの待ち受け・ハンドリングと、デバイスで実装されているイベントの発火を行っています。  
+opnizインスタンスの生成、Wi-Fi接続、Node.js SDK実行端末への接続、そして`loop`関数内でNode.js SDK実行端末からのTCPメッセージの待ち受け・ハンドリングと、デバイスで実装されているイベントの発火を行っています。  
 
-M5ATOM LiteのLED制御やボタンイベントは`Opniz::M5AtomLite`クラスで実装されているので、このコードをデバイスへ書き込むだけでNode.js SDKから制御可能となります。  
-`ssid`、`password`をお使いのWiFiのものに、`address`、`port`をそれぞれNode.js SDKを実行している端末のものに書き換え、デバイスに書き込んでみてください。  
+M5ATOMのLED制御やボタンイベントは`Opniz::M5Atom`クラスで実装されているので、このコードをデバイスへ書き込むだけでNode.js SDKから制御可能となります。  
+`ssid`、`password`をお使いのWi-Fiのものに、`address`、`port`をそれぞれNode.js SDKを実行している端末のものに書き換え、デバイスに書き込んでみてください。  
 
 ```cpp
 #include <Opniz.h>
@@ -73,7 +73,7 @@ WiFiConnector wifi(ssid, password);
 
 const char* address = "192.168.0.1"; // Node.js SDKを実行する端末のIPアドレスを指定
 const uint16_t port = 3000;        // 任意のポート番号を指定（opniz Node.js SDKでの指定と合わせる）
-Opniz::M5AtomLite* opniz = new Opniz::M5AtomLite(address, port); // opnizインスタンス生成
+Opniz::M5Atom* opniz = new Opniz::M5Atom(address, port); // opnizインスタンス生成
 
 void setup() {
     M5.begin(true, false, true); // M5初期化

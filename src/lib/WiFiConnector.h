@@ -8,7 +8,7 @@ private:
     const char* _ssid;
     const char* _password;
     
-    uint16_t _timeout = 30 * 1000;
+    uint16_t _timeout = 60 * 1000;
     uint32_t _startTime;
     std::function<void()> _timeoutCallback = [this]() { connect(); };
     

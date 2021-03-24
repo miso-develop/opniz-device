@@ -1,6 +1,8 @@
 #ifndef BASE_DEVICE_H
 #define BASE_DEVICE_H
 
+#include <unordered_map>
+
 #include "devices/base/lib/TcpManager.h"
 #include "devices/base/BaseHandler.h"
 #include "devices/base/BaseEmitter.h"
@@ -8,8 +10,8 @@
 
 class BaseDevice : public TcpManager {
 private:
-    std::vector<BaseHandler*> _handlerList;
-    std::vector<BaseEmitter*> _emitterList;
+    std::unordered_map<std::string, BaseHandler*> _handlers;
+    std::vector<BaseEmitter*> _emitters;
     
     JsonParser _jsonParser;
     DynamicJsonDocument _responseJsonDoc;
@@ -24,8 +26,8 @@ public:
     String name;
     void handleMessage();
     void emitMessage();
-    void addHandlerList(std::vector<BaseHandler*> handlerList);
-    void addEmitterList(std::vector<BaseEmitter*> emitterList);
+    void addHandler(std::vector<BaseHandler*> handlers);
+    void addEmitter(std::vector<BaseEmitter*> emitters);
 };
 
 #endif

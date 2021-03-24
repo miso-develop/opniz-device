@@ -83,6 +83,7 @@ void TcpManager::receive(std::function<String(String)> messageHandler) {
         _socket.print(response);
         
         dlog(esp_get_minimum_free_heap_size()); // DEBUG:
+        dlog(uxTaskGetStackHighWaterMark(NULL)); // DEBUG:
         dlog(temperatureRead()); // DEBUG:
     }
 }

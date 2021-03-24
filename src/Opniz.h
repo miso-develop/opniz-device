@@ -1,14 +1,14 @@
 #ifndef OPNIZ_H
 #define OPNIZ_H
 
-#include "devices/Esp32Pico.h"
-#include "devices/M5AtomLite.h"
+#include "devices/Esp32.h"
+#include "devices/M5Atom.h"
 
 namespace Opniz {
-    using Esp32Pico = Esp32Pico;
-    using M5AtomLite = M5AtomLite;
     using BaseHandler = BaseHandler;
     using BaseEmitter = BaseEmitter;
+    using Esp32 = Esp32;
+    using M5Atom = M5Atom;
 };
 
 #endif

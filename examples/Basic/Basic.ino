@@ -7,7 +7,7 @@ const char* password = "<PASSWORD>";
 // opniz
 const char* address = "192.168.0.1";
 const uint16_t port = 3000;
-Opniz::M5AtomLite* opniz = new Opniz::M5AtomLite(address, port);
+Opniz::M5Atom* opniz = new Opniz::M5Atom(address, port);
 
 
 

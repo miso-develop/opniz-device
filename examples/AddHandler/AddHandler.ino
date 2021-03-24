@@ -7,14 +7,14 @@ const char* password = "<PASSWORD>";
 // opniz
 const char* address = "192.168.0.1";
 const uint16_t port = 3000;
-Opniz::Esp32Pico* opniz = new Opniz::Esp32Pico(address, port);
+Opniz::Esp32* opniz = new Opniz::Esp32(address, port);
 
 
 
 // Custom Handler
 class DrawpixHandler : public BaseHandler {
 public:
-    boolean canHandle(JsonObject json) override { return isMessageName(json, "drawpix"); }
+    String getName() override { return "drawpix"; };
     String handle(JsonObject json) override {
         uint8_t number = (uint8_t)json["parameters"][0];
         String color = json["parameters"][1];
@@ -56,8 +56,8 @@ void setup() {
     Serial.println(WiFi.localIP());
     
     // Add custom handler/emitter
-    opniz->addHandlerList({ new DrawpixHandler });
-    opniz->addEmitterList({ new ButtonEmitter });
+    opniz->addHandler({ new DrawpixHandler });
+    opniz->addEmitter({ new ButtonEmitter });
     
     // opniz connect
     opniz->connect();

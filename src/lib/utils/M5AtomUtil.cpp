@@ -4,7 +4,7 @@
 void initM5Atom() {
     M5.begin(true, false, true);
     M5.dis.setBrightness(10);
-    setCpuFrequencyMhz(80);
+    setCpuFrequencyMhz(160);
     
     Serial.println();
     delay(100);

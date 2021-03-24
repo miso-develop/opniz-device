@@ -1,12 +1,13 @@
 {
 	"folders": [
 		{
-			"name": "opniz-device",
-			"path": "."
-		}
+			"path": ".",
+		},
 	],
 	"settings": {
 		"files.associations": {
+			"*.html": "html",
+			"*.hta": "html",
 			"new": "cpp",
 			"*.tcc": "cpp",
 			"cmath": "cpp",
@@ -18,7 +19,43 @@
 			"vector": "cpp",
 			"initializer_list": "cpp",
 			"esp32-hal.h": "c",
-			"functional": "cpp"
+			"functional": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cstdarg": "cpp",
+			"cstddef": "cpp",
+			"cstdint": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cstring": "cpp",
+			"ctime": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"exception": "cpp",
+			"algorithm": "cpp",
+			"system_error": "cpp",
+			"tuple": "cpp",
+			"type_traits": "cpp",
+			"fstream": "cpp",
+			"iomanip": "cpp",
+			"iosfwd": "cpp",
+			"istream": "cpp",
+			"limits": "cpp",
+			"memory": "cpp",
+			"ostream": "cpp",
+			"numeric": "cpp",
+			"sstream": "cpp",
+			"stdexcept": "cpp",
+			"streambuf": "cpp",
+			"cinttypes": "cpp",
+			"utility": "cpp",
+			"typeinfo": "cpp",
+			"esp_system.h": "c"
+		},
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#00767b",
+			"activityBarBadge.background": "#00767b",
+			"statusBar.background": "#00767b",
 		},
 		"cSpell.words": [
 			"CRGB",
@@ -32,9 +69,11 @@
 			"jdlog",
 			"ledc",
 			"opniz"
-		]
+		],
 	},
-	"recommendations": [
-		"platformio.platformio-ide"
-	]
+	"extensions": {
+		"recommendations": [
+			"platformio.platformio-ide",
+		],
+	},
 }
