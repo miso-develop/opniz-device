@@ -14,10 +14,10 @@ Opniz::Esp32* opniz = new Opniz::Esp32(address, port);
 // Custom Handler
 class DrawpixHandler : public BaseHandler {
 public:
-    String getName() override { return "drawpix"; };
-    String handle(JsonObject json) override {
-        uint8_t number = (uint8_t)json["parameters"][0];
-        String color = json["parameters"][1];
+    String name() override { return "drawpix"; };
+    String handle(JsonArray parameters) override {
+        uint8_t number = (uint8_t)parameters[0];
+        String color = parameters[1];
         M5.dis.drawpix(number, str2crgb(color));
         return "true";
     }
