@@ -13,8 +13,8 @@ namespace Opniz { // MEMO: 本家M5Atomと名前衝突してしまったのでna
         
         class DrawpixHandler : public BaseHandler {
         public:
-            String getName() override { return "drawpix"; };
-            String handle(JsonObject json) override;
+            String name() override { return "drawpix"; };
+            String handle(JsonArray parameters) override;
         };
         
         class ButtonEmitter : public BaseEmitter {

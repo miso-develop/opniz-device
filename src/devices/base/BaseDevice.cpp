@@ -3,11 +3,11 @@
 BaseDevice::BaseDevice(const char* address, uint16_t port) : TcpManager(address, port), _responseJsonDoc(1024) {}
 
 String BaseDevice::_messageHandler(String message) {
-    const JsonArray jsonArray = _jsonParser.parseArray(message);
+    const JsonArray messageArray = _jsonParser.parseArray(message);
     JsonArray responseJsonArray = _responseJsonDoc.to<JsonArray>();
-    for (JsonObject json : jsonArray) {
-        BaseHandler* handler = _handlers[json["name"]];
-        String response = (boolean)handler ? handler->handle(json) : "notmatch";
+    for (JsonObject messageJson : messageArray) {
+        BaseHandler* handler = _handlers[messageJson["name"]];
+        String response = (boolean)handler ? handler->handle(messageJson["parameters"]) : "notmatch";
         responseJsonArray.add(response);
     }
     return _jsonParser.stringify(_responseJsonDoc);
@@ -28,7 +28,7 @@ void BaseDevice::emitMessage() {
 }
 
 void BaseDevice::addHandler(std::vector<BaseHandler*> handlers) {
-    for (BaseHandler* handler : handlers) _handlers[handler->getName().c_str()] = handler;
+    for (BaseHandler* handler : handlers) _handlers[handler->name().c_str()] = handler;
 }
 
 void BaseDevice::addEmitter(std::vector<BaseEmitter*> emitters) {

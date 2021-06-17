@@ -7,8 +7,8 @@ extern DynamicJsonDocument jsonDoc;
 
 class BaseHandler {
 public:
-    virtual String getName() = 0;
-    virtual String handle(JsonObject json) = 0;
+    virtual String name() = 0;
+    virtual String handle(JsonArray parameters) = 0;
     virtual ~BaseHandler() = default;
 };
 

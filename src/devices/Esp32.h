@@ -13,56 +13,56 @@ namespace Opniz {
         
         class GetFreeHeapHandler : public BaseHandler {
         public:
-            String getName() override { return "getFreeHeap"; };
-            String handle(JsonObject json) override;
+            String name() override { return "getFreeHeap"; };
+            String handle(JsonArray parameters) override;
         };
         
         class TemperatureReadHandler : public BaseHandler {
         public:
-            String getName() override { return "temperatureRead"; };
-            String handle(JsonObject json) override;
+            String name() override { return "temperatureRead"; };
+            String handle(JsonArray parameters) override;
         };
         
         class RestartHandler : public BaseHandler {
         public:
-            String getName() override { return "restart"; };
-            String handle(JsonObject json) override;
+            String name() override { return "restart"; };
+            String handle(JsonArray parameters) override;
         };
         
         class DelayHandler : public BaseHandler {
         public:
-            String getName() override { return "delay"; };
-            String handle(JsonObject json) override;
+            String name() override { return "delay"; };
+            String handle(JsonArray parameters) override;
         };
         
         class AnalogReadHandler : public BaseHandler {
         public:
-            String getName() override { return "analogRead"; };
-            String handle(JsonObject json) override;
+            String name() override { return "analogRead"; };
+            String handle(JsonArray parameters) override;
         };
         
         class DacWriteHandler : public BaseHandler {
         public:
-            String getName() override { return "dacWrite"; };
-            String handle(JsonObject json) override;
+            String name() override { return "dacWrite"; };
+            String handle(JsonArray parameters) override;
         };
         
         class DigitalReadHandler : public BaseHandler {
         public:
-            String getName() override { return "digitalRead"; };
-            String handle(JsonObject json) override;
+            String name() override { return "digitalRead"; };
+            String handle(JsonArray parameters) override;
         };
         
         class DigitalWriteHandler : public BaseHandler {
         public:
-            String getName() override { return "digitalWrite"; };
-            String handle(JsonObject json) override;
+            String name() override { return "digitalWrite"; };
+            String handle(JsonArray parameters) override;
         };
         
         class LedcWriteHandler : public BaseHandler {
         public:
-            String getName() override { return "ledcWrite"; };
-            String handle(JsonObject json) override;
+            String name() override { return "ledcWrite"; };
+            String handle(JsonArray parameters) override;
         };
     };
 }

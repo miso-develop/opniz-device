@@ -14,9 +14,9 @@ Opniz::M5Atom::M5Atom(const char* address, uint16_t port) : Esp32(address, port)
 
 
 
-String Opniz::M5Atom::DrawpixHandler::handle(JsonObject json) {
-    uint8_t number = (uint8_t)json["parameters"][0];
-    String color = json["parameters"][1];
+String Opniz::M5Atom::DrawpixHandler::handle(JsonArray parameters) {
+    uint8_t number = (uint8_t)parameters[0];
+    String color = parameters[1];
     M5.dis.drawpix(number, str2crgb(color));
     return "true";
 }
