@@ -50,7 +50,18 @@
 			"cinttypes": "cpp",
 			"utility": "cpp",
 			"typeinfo": "cpp",
-			"esp_system.h": "c"
+			"esp_system.h": "c",
+			"atomic": "cpp",
+			"chrono": "cpp",
+			"optional": "cpp",
+			"ratio": "cpp",
+			"string_view": "cpp",
+			"bit": "cpp",
+			"map": "cpp",
+			"iterator": "cpp",
+			"memory_resource": "cpp",
+			"netfwd": "cpp",
+			"random": "cpp"
 		},
 		"workbench.colorCustomizations": {
 			"titleBar.activeBackground": "#00767b",

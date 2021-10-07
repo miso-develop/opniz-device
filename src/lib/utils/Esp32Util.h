@@ -3,6 +3,7 @@
 
 #include <esp32-hal.h>
 
-void watchHeap();
+void rebootWhenHeap(int freeHeapThresholdSize);
+void rebootWhenHeap();
 
 #endif
